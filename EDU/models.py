@@ -88,9 +88,10 @@ class Department(models.Model):
 class Classroom(models.Model):
 
     class_name = models.CharField(max_length=255, primary_key=True, blank=False)
+    class_capacity = models.IntegerField(null=True, default=0)
 
     def __str__(self):
-        return "class name: " + self.class_name
+        return "class name: " + self.class_name + " class capacity: " + str(self.class_capacity)
 
 
 class Schedule(models.Model):
